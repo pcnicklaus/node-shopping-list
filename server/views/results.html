@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+
+   <div class='alert alert-success' role='alert'
+      <p>{{success}}</p>
+   </div>
+
+   <h1>Showing Items</h1>
+
+   <div class="bs-example" data-example-id="striped-table">
+      <table class="table table-striped" >
+        <thead>
+          <tr>
+            <th>Puppy Name</th>
+            <th>Puppy ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for puppy in puppies%}
+          <tr>
+            <td>{{puppy.name}}</td>
+            <td>{{puppy.id}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+   </div>
+</div>
+
+{% endblock %}

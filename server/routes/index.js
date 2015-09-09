@@ -19,8 +19,8 @@ router.post('/items', function(req, res) {
 });
 
 router.put('/item/:id', function (req, res) {
-  if (storage.items[req.params.id-1]) {
-    storage.items[req.params.id-1].name = req.body.name;
+  if (storage.items[req.params.id]) {
+    storage.items[req.params.id].name = req.body.name;
     res.json(storage.items);
   } else {
     storage.addItem(req.body.name);
@@ -29,8 +29,8 @@ router.put('/item/:id', function (req, res) {
 });
 
 router.delete('/item/:id', function (req, res) {
-  if (storage.items[req.params.id - 1]) {
-    storage.items.splice((req.params.id - 1), 1);
+  if (storage.items[req.params.id]) {
+    storage.items.splice(req.params.id, 1);
     res.json(storage.items);
   } else {
     res.json(storage.items);
